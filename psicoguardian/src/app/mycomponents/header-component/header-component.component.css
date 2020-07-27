@@ -1,0 +1,11 @@
+.color{
+    background-color: turquoise;
+    margin-top: 1%;
+    padding: 3%;
+    border-bottom-right-radius: 1em;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    color: teal;
+    z-index: 2%;
+}
