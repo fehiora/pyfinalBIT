@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {FormsModule}from '@angular/forms';
+import {PsicologosService} from './services/user.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -30,10 +32,12 @@ const appRoutes: Routes = [
   imports: [ /**Módulos de ángular que se importan para que funcionen */
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    /**Acá se colocan todos los servicios*/
+    /**Acá se colocan todos los servicios que yo cree*/
+    PsicologosService
   ],
   bootstrap: [AppComponent]
 })
