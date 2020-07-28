@@ -11,11 +11,11 @@ import { HeaderComponentComponent } from './mycomponents/header-component/header
 import { FooterComponentComponent } from './mycomponents/footer-component/footer-component.component';
 import { SliderComponentComponent } from './mycomponents/slider-component/slider-component.component';
 import { LoginComponentComponent } from './mycomponents/login-component/login-component.component';
-import { from } from 'rxjs';
 import { UserSigninComponent } from './mycomponents/user-signin/user-signin.component';
+import { HomeComponentComponent } from './mycomponents/home-component/home-component.component';
 
 const appRoutes: Routes = [
-  {path:'',component: LoginComponentComponent},
+  {path:'',component: HomeComponentComponent},
   {path:'registro',component: UserSigninComponent}
 ]
 
@@ -27,7 +27,8 @@ const appRoutes: Routes = [
     FooterComponentComponent,
     SliderComponentComponent,
     LoginComponentComponent,
-    UserSigninComponent
+    UserSigninComponent,
+    HomeComponentComponent
   ],
   imports: [ /**Módulos de ángular que se importan para que funcionen */
     BrowserModule,
