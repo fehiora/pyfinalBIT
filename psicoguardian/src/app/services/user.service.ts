@@ -5,11 +5,11 @@
 
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders } from '@angular/common/http';
-import {Observable} from 'rxjs';
+
 
 @Injectable() //permite usar el injectable en otros lados del proyecto
 export class PsicologosService{
-    apiURL = 'http://localhost:3000/api';
+    apiURL = 'http://localhost:3000/apipsicoguardian';
     constructor(
         private http: HttpClient
     ){}

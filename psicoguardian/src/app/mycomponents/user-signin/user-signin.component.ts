@@ -24,7 +24,11 @@ export class UserSigninComponent implements OnInit {
 
   userSignin(){
     this.service.registerUser(this.user).subscribe( (res: any) => {
-      console.log(res);
+      if (res.statusCode == 200){
+        alert(res.message); 
+      }else{
+        alert("Error al insertar el usuario");
+      }
     })
   }
 
