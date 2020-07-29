@@ -31,4 +31,17 @@ export class PsicologosService{
             this.opt
         )
     }
+
+    updateUser(userParams){
+        console.log( "userParams--->", userParams);
+        const params = JSON.stringify(userParams);
+        return  true;
+    }
+
+    getUser(userId){
+        return this.http.get(
+            this.apiURL + '/getUser' + userId,
+            this.opt
+        )
+    }
 }

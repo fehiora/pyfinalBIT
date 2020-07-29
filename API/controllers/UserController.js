@@ -97,7 +97,7 @@ function remove(req, res){
 
 //Cuarta función para listar todos los usuarios de la base de mongo
 function listAll(req,res){
-    User.find((error, userListed) => {
+    User.find({},(error, userListed) => {
         if(error){
             res.send({
                 message: "Error de conexión con el servidor",
@@ -179,6 +179,26 @@ function login(req,res){
     })
 }
 
+//Séptima función para buscar por el ID y que se puedan editar los usuarios desde el front
+
+function getUser(req,res){
+    var idUser = req.params.id;
+    User.findById(idUser,(error, dataUser) => {
+        if(error){
+            res.status(500).send({
+                statusCode: 500,
+                message: "Error de conexión con el servidor"             
+            })
+        }else{
+                res.status(200).send({
+                statusCode: 200,
+                message: "Todos los usuarios:",
+                dataUser: dataUser
+                 })
+                }     
+    })
+}
+
 //esta es la forma de esportar los métodos del controlador para usarlos en otros archivos
 module.exports = {
    create,
@@ -186,5 +206,6 @@ module.exports = {
    remove,
    listAll,
    listOne,
-   login
+   login,
+   getUser
 }

@@ -14,11 +14,13 @@ import { LoginComponentComponent } from './mycomponents/login-component/login-co
 import { UserSigninComponent } from './mycomponents/user-signin/user-signin.component';
 import { HomeComponentComponent } from './mycomponents/home-component/home-component.component';
 import { UserShowComponent } from './mycomponents/user-show/user-show.component';
+import { UpdataUserComponent } from './mycomponents/updata-user/updata-user.component';
 
 const appRoutes: Routes = [
   {path:'',component: HomeComponentComponent},
   {path:'registro',component: UserSigninComponent},
-  {path:'showAllUsers', component: UserShowComponent}
+  {path:'showAllUsers', component: UserShowComponent},  
+  {path: 'editUser/:id', component: UpdataUserComponent}
 ]
 
 @NgModule({
@@ -31,7 +33,8 @@ const appRoutes: Routes = [
     LoginComponentComponent,
     UserSigninComponent,
     HomeComponentComponent,
-    UserShowComponent
+    UserShowComponent,
+    UpdataUserComponent
   ],
   imports: [ /**Módulos de ángular que se importan para que funcionen */
     BrowserModule,

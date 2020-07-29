@@ -1,7 +1,34 @@
-<!-- *ngFor = "let user of allUser" recorre el arreglo de todos los usuarios  -->
+<!-- *ngFor = "let user of allUser" recorre el arreglo de todos los usuarios. -->
+<!-- El uso de las llaves es para imprimir información de JS -->
 
 <div class="container">
-    <!-- <div *ngFor = "let user of allUser" >
-        {{ user.nombre}}
-    </div> -->
+
+    <h1>PSICÓLOGOS REGISTRADOS</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>DOCUMENTO</th>
+                <th>TARJETA PROFESIONAL</th>
+                <th>LICENCIA EN SALUD OCUPACIONAL</th>
+                <th>CELULAR</th>
+                <th>CORREO</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let user of allUser">
+                <td> {{ user.nombre}} </td>
+                <td> {{ user.apellido}} </td>
+                <td> {{ user.documento}} </td>
+                <td> {{ user.tarjetaProfesional}} </td>
+                <td> {{ user.licenciaSo}} </td>
+                <td> {{ user.celular}} </td>
+                <td> {{ user.email}} </td>
+                <td><a routerLink='/editUser/{{ user._id}}' class="btn btn-success">Editar</a></td>
+            </tr>
+        </tbody>
+    </table>
 </div>    
