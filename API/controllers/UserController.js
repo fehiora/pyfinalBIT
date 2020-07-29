@@ -112,6 +112,7 @@ function listAll(req,res){
             }else{
                 res.send({
                 message: "Esta es la lista de usuarios:",
+                statusCode: 200,
                 data: userListed
                  })
                 }     

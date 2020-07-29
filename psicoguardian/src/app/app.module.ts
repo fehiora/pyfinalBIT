@@ -13,10 +13,12 @@ import { SliderComponentComponent } from './mycomponents/slider-component/slider
 import { LoginComponentComponent } from './mycomponents/login-component/login-component.component';
 import { UserSigninComponent } from './mycomponents/user-signin/user-signin.component';
 import { HomeComponentComponent } from './mycomponents/home-component/home-component.component';
+import { UserShowComponent } from './mycomponents/user-show/user-show.component';
 
 const appRoutes: Routes = [
   {path:'',component: HomeComponentComponent},
-  {path:'registro',component: UserSigninComponent}
+  {path:'registro',component: UserSigninComponent},
+  {path:'showAllUsers', component: UserShowComponent}
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     SliderComponentComponent,
     LoginComponentComponent,
     UserSigninComponent,
-    HomeComponentComponent
+    HomeComponentComponent,
+    UserShowComponent
   ],
   imports: [ /**Módulos de ángular que se importan para que funcionen */
     BrowserModule,
