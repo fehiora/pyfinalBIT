@@ -36,6 +36,7 @@ export class UpdataUserComponent implements OnInit {
 
   getDataUser(){
     this.service.getUser(this.idUser).subscribe( (res : any) => {
+     // console.log(res.dataUser);
       this.user = res.dataUser
 
     })

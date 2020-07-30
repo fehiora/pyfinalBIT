@@ -25,6 +25,7 @@ export class UserSigninComponent implements OnInit {
   }
 
   userSignin(){
+    //document.getElementById('nombre').value;//hacer validación para que esté diligenciado el formulario
     this.service.registerUser(this.user).subscribe( (res: any) => {
       if (res.statusCode == 200){
         alert(res.message); 

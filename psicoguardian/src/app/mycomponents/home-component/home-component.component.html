@@ -1,15 +1,18 @@
 <div class="row">
     <div class="col-md-6">
-        <!--app-slider-component></app-slider-component-->
+        <app-slider-component></app-slider-component>
     </div>
     <div class="col-md-6">
         <app-login-component></app-login-component>
+        <section class="admin">
+            <div class="row">
+                <div class="col-md-12">
+                    <h5>Ingreso Administrador</h5>
+                    <button type="submit" class="btn btn-primary"><a routerLink="/showAllUsers">Ver Usuarios</a></button>
+                    
+                </div>
+            </div>
+            </section>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-md-12">
-        <!--app-user-show></app-user-show-->
-        <a routerLink="/showAllUsers">Ver Usuarios</a>
-    </div>
-</div>
