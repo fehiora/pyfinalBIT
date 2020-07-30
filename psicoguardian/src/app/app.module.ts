@@ -20,7 +20,8 @@ const appRoutes: Routes = [
   {path:'',component: HomeComponentComponent},
   {path:'registro',component: UserSigninComponent},
   {path:'showAllUsers', component: UserShowComponent},  
-  {path: 'editUser/:id', component: UpdataUserComponent}
+  {path: 'editUser/:id', component: UpdataUserComponent},
+  {path: 'deleteUser/:id', component: UserShowComponent}
 ]
 
 @NgModule({

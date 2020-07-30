@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PsicologosService} from '../../services/user.service';
-
+import {Router, ActivatedRoute} from '@angular/router'
 
 
 @Component({
@@ -11,12 +11,24 @@ import {PsicologosService} from '../../services/user.service';
 export class UserShowComponent implements OnInit {
   public user: PsicologosService;
   public allUser: [];
+  public idUser;
+  public path;
+
   constructor(
-    private service: PsicologosService
+    private service: PsicologosService,
+    private routerParams : ActivatedRoute,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
-    this.showAllUsers();
+
+    this.path = this.routerParams.snapshot.url[0].path;
+      if(this.path == 'deleteUser'){
+        this.idUser = this.routerParams.snapshot.paramMap.get('id');
+        this.removeUser();
+      }else{
+        this.showAllUsers();
+      }
   }
 
   showAllUsers(){
@@ -27,5 +39,17 @@ export class UserShowComponent implements OnInit {
         }else{
         }
     })
+  }
+
+  removeUser(){
+    this.service.removeUser(this.idUser).subscribe( (res : any) =>{
+      if(res.statusCode == 200){
+        alert(res.message);
+        this.router.navigate(['/showAllUsers']);
+      }else{
+        alert(res.message);
+      }
+    }
+    )
   }
 }

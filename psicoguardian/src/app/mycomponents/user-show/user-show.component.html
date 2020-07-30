@@ -16,6 +16,7 @@
                 <th>CELULAR</th>
                 <th>CORREO</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
                 <td> {{ user.celular}} </td>
                 <td> {{ user.email}} </td>
                 <td><a routerLink='/editUser/{{ user._id}}' class="btn btn-success">Editar</a></td>
+                <td><a routerLink='/deleteUser/{{ user._id}}' class="btn btn-danger">Eliminar</a></td>
             </tr>
         </tbody>
     </table>

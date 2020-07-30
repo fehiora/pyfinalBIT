@@ -182,8 +182,8 @@ function login(req,res){
 //Séptima función para buscar por el ID y que se puedan editar los usuarios desde el front
 
 function getUser(req,res){
-    var idUser = req.params.id;
-    User.findById(idUser,(error, dataUser) => {
+    let idUser = req.params.id;
+    User.findById(idUser, (error, dataUser) => {
         if(error){
             res.status(500).send({
                 statusCode: 500,

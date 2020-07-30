@@ -35,12 +35,24 @@ export class PsicologosService{
     updateUser(userParams){
         console.log( "userParams--->", userParams);
         const params = JSON.stringify(userParams);
-        return  true;
+        return this.http.put(
+            `${this.apiURL}/${userParams._id}`,
+            params,
+            this.opt
+        )   
     }
 
     getUser(userId){
         return this.http.get(
-            this.apiURL + '/getUser' + userId,
+            `${this.apiURL}/getUser/${userId}`,
+            //this.apiURL + '/getUser' + userId,
+            this.opt
+        )
+    }
+
+    removeUser(userId){
+        return this.http.delete(
+            `${this.apiURL}/${userId}`,
             this.opt
         )
     }

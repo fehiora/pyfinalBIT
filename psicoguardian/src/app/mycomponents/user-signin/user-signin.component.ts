@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User} from '../../models/user';
 import {PsicologosService} from '../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-signin',
@@ -14,6 +15,7 @@ export class UserSigninComponent implements OnInit {
   /* El constructor es un método de tipe script, al cargar el componente se va a ejecutar primero lo del contructor*/
   constructor(
     private service: PsicologosService,
+    private router: Router
   ) {
     this.user = new User();
    }
@@ -26,6 +28,7 @@ export class UserSigninComponent implements OnInit {
     this.service.registerUser(this.user).subscribe( (res: any) => {
       if (res.statusCode == 200){
         alert(res.message); 
+        this.router.navigate(['']);
       }else{
         alert("Error al insertar el usuario");
       }

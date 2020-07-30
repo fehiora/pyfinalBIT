@@ -14,7 +14,8 @@ export class UpdataUserComponent implements OnInit {
   public idUser;  
   constructor(
     private service: PsicologosService,
-    private routerParams : ActivatedRoute
+    private routerParams : ActivatedRoute,
+    private router : Router
   ) { }
 
   ngOnInit(): void {
@@ -23,9 +24,14 @@ export class UpdataUserComponent implements OnInit {
   }
 
   updateUser(){
-    /*this.service.updateUser(this.user).subscribe( (res: any)){
-
-    })*/
+    this.service.updateUser(this.user).subscribe( (res: any) => {
+      if (res.statusCode == 200){
+        alert(res.message);
+        this.router.navigate(['/showAllUsers']);
+      }else{
+        alert(res.message)
+      }
+    })
   } 
 
   getDataUser(){
