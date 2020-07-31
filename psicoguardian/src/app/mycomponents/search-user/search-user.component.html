@@ -1,0 +1,9 @@
+<div class="container">
+    <label>Búsqueda por documento</label>
+    <input (change)="searchUser($event);" class="form-control" >
+
+    <div *ngFor= "let user of dataUser">
+        {{user.documento}}
+    </div>
+
+</div>

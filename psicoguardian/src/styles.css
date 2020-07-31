@@ -1,6 +1,5 @@
-.margin{
-    margin: 2%;
-    padding: 4%;
-    justify-content: center;
 
+*body{
+    margin: 0;
+    padding: 0;
 }

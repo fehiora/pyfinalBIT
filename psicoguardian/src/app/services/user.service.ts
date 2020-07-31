@@ -56,4 +56,20 @@ export class PsicologosService{
             this.opt
         )
     }
+
+    // searchUserByDocument(documento){
+    //     return this.http.get(
+    //        `${this.apiURL}/:documento${documento}`,
+    //        this.opt
+    //     )
+    // }
+
+    login(userParams){
+        const params = JSON.stringify(userParams);
+        return this.http.post(
+            `${this.apiURL}/login`,
+            params,
+            this.opt
+        )
+    }
 }

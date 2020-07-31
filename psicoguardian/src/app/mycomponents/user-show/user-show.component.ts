@@ -52,4 +52,5 @@ export class UserShowComponent implements OnInit {
     }
     )
   }
+  
 }

@@ -165,13 +165,13 @@ function login(req,res){
             }else{
                 if(userLogged.contrasenia == params.contrasenia){
                     res.send({
-                        message: "Bienvenido",
+                        message: "Sesión Iniciada",
                         statusCode: 200
                     })
                 }else {
                     res.send({
                     message: "Usuario o contraseña no coinciden",
-                    statusCode: 401
+                    statusCode: 204
                     })
                 }
             }
