@@ -16,6 +16,7 @@ import { HomeComponentComponent } from './mycomponents/home-component/home-compo
 import { UserShowComponent } from './mycomponents/user-show/user-show.component';
 import { UpdataUserComponent } from './mycomponents/updata-user/updata-user.component';
 import { SearchUserComponent } from './mycomponents/search-user/search-user.component';
+import { LoginAdminComponent } from './mycomponents/login-admin/login-admin.component';
 
 const appRoutes: Routes = [
   {path:'',component: HomeComponentComponent},
@@ -38,7 +39,8 @@ const appRoutes: Routes = [
     HomeComponentComponent,
     UserShowComponent,
     UpdataUserComponent,
-    SearchUserComponent
+    SearchUserComponent,
+    LoginAdminComponent
   ],
   imports: [ /**Módulos de ángular que se importan para que funcionen */
     BrowserModule,

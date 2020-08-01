@@ -2,40 +2,40 @@
 
     <div class="formRegistro">
 
-    <form #userSigninForm = "ngForm" (ngSubmit) = "userSignin();" >
+    <form #userSigninForm = "ngForm" (ngSubmit) = "userSignin(userSigninForm);" >
         <div class="row">
             <div class="col">
-                <input type="text" name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" class="form-control" placeholder="Nombre"/>
+                <input type="text" required name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" class="form-control" placeholder="Nombre"/>
             </div>
             <div class="col">
-                <input type="text" name="apellido" id="apellido" #apellido="ngModel" [(ngModel)]="user.apellido" class="form-control" placeholder="Apellido"/>
+                <input type="text" required name="apellido" id="apellido" #apellido="ngModel" [(ngModel)]="user.apellido" class="form-control" placeholder="Apellido"/>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <input type="number" name="documento" id="documento" #documento="ngModel" [(ngModel)]="user.documento"class="form-control" placeholder="Documento"/>
+                <input type="number" required name="documento" id="documento" #documento="ngModel" [(ngModel)]="user.documento"class="form-control" placeholder="Documento"/>
             </div>
             <div class="col">
-                <input type="number" name="tarjetaProfesional" id="tarjetaProfesional" #tarjetaProfesional="ngModel" [(ngModel)]="user.tarjetaProfesional" class="form-control" placeholder="Tarjeta Profesional"/>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                <input type="text" name="licenciaSo" id="licenciaSo" #licenciaSo="ngModel" [(ngModel)]="user.licenciaSo" class="form-control" placeholder="Licencia en Salud Ocupacional"/>
-            </div>
-            <div class="col">
-                <input type="number" name="celular" id="celular" #celular="ngModel" [(ngModel)]="user.celular" class="form-control" placeholder="Celular"/>
+                <input type="number" required name="tarjetaProfesional" id="tarjetaProfesional" #tarjetaProfesional="ngModel" [(ngModel)]="user.tarjetaProfesional" class="form-control" placeholder="Tarjeta Profesional"/>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="E-mail"/>
+                <input type="text" required name="licenciaSo" id="licenciaSo" #licenciaSo="ngModel" [(ngModel)]="user.licenciaSo" class="form-control" placeholder="Licencia en Salud Ocupacional"/>
             </div>
             <div class="col">
-                <input type="text" name="contrasenia" id="contrasenia" #contrasenia="ngModel" [(ngModel)]="user.contrasenia" class="form-control" placeholder="Contraseña"/>
+                <input type="number" required name="celular" id="celular" #celular="ngModel" [(ngModel)]="user.celular" class="form-control" placeholder="Celular"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <input type="email" required name="email" id="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="E-mail"/>
+            </div>
+            <div class="col">
+                <input type="text" required name="contrasenia" id="contrasenia" #contrasenia="ngModel" [(ngModel)]="user.contrasenia" class="form-control" placeholder="Contraseña"/>
             </div>
         </div>
 

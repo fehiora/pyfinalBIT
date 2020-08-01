@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { User} from '../../models/user';
 import {PsicologosService} from '../../services/user.service';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-signin',
@@ -24,16 +25,23 @@ export class UserSigninComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  userSignin(){
+  userSignin(registerForm: NgForm){
     //document.getElementById('nombre').value;//hacer validación para que esté diligenciado el formulario
-    this.service.registerUser(this.user).subscribe( (res: any) => {
-      if (res.statusCode == 200){
-        alert(res.message); 
-        this.router.navigate(['']);
-      }else{
-        alert("Error al insertar el usuario");
-      }
-    })
+    console.log(registerForm.value);
+    console.log(registerForm.valid);
+    if(registerForm.valid){
+        this.service.registerUser(registerForm.value).subscribe( (res: any) => {
+        if (res.statusCode == 200){
+          alert(res.message); 
+          this.router.navigate(['']);
+        }else{
+          alert("Error al insertar el usuario");
+        }
+      })
+    }else{
+      alert("Debe diligenciar todos los campos");
+    }
+ 
   }
 
 }
