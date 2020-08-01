@@ -1,1 +1,15 @@
-<p>login-admin works!</p>
+<div class="container margin">
+  <form #adminForm="ngForm" (ngSubmit)="adminOnSubmit(adminForm)" novalidate>
+    
+    <div class="form-group">
+      <input type="number" name="documento" ngModel required #documento="ngModel" class="form-control" placeholder="Usuario">
+    </div>
+    <div class="form-group">
+      <input type="password" name="contrasenia" ngModel required class="form-control" placeholder="Contraseña">
+    </div>
+    <button class="btn btn-primary">INGRESAR</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" #closeModal aria-label="Close" (click)="d('Cross click')">
+      Close
+    </button>
+  </form>
+</div>

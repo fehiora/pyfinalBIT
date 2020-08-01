@@ -179,6 +179,46 @@ function login(req,res){
     })
 }
 
+function adminlogin(req,res){
+    var params = req.body;
+
+    User.findOne({documento: params.documento}, (error,userLogged)=>{
+        if(error){
+            res.send({
+                message: "Error de conexión",
+                statusCode: 500
+            })
+        }else{
+            if(!userLogged){
+                res.send({
+                    message: "El usuario no existe",
+                    statusCode: 400
+                })
+            }else{
+                if(userLogged.contrasenia == params.contrasenia){
+                    if (userLogged.admin){
+                        res.send({
+                            message: "Sesión Iniciada",
+                            statusCode: 200
+                        })
+                    }else{
+                        res.send({
+                            message: "El usuario no es Administrador",
+                            statusCode: 403
+                        })
+                    }
+                    
+                }else {
+                    res.send({
+                    message: "Usuario o contraseña no coinciden",
+                    statusCode: 204
+                    })
+                }
+            }
+        }
+    })
+}
+
 //Séptima función para buscar por el ID y que se puedan editar los usuarios desde el front
 
 function getUser(req,res){
@@ -207,5 +247,6 @@ module.exports = {
    listAll,
    listOne,
    login,
+   adminlogin,
    getUser
 }

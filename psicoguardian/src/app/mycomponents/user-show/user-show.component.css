@@ -1,0 +1,14 @@
+.title{
+    margin: 2%;
+    padding: 5% 2%;
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn{
+    margin-left: 10%;
+}
+
+thead {
+    text-align: center;
+}

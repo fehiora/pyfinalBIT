@@ -37,35 +37,5 @@ export class LoginComponentComponent {
     });
 
   }
+  
 }
-// export class LoginComponentComponent implements OnInit {
-//   public user: User;
-//   constructor(
-//     private service: PsicologosService
-//   ) {
-//     this.user =  new User();
-//    }
-
-//   ngOnInit(): void {
-//   }
-
-//   login(user: string, passwd: string){
-//     console.log("user: " + user);
-//     // this.service.login(this.user).subscribe( (res: any) =>{
-//     //   switch (res.statusCode) {
-//     //     case 204:
-//     //       alert('Los datos no coinciden');
-//     //       break;
-//     //     case 200:
-//     //       alert('Sesión Iniciada');  
-//     //       break;
-//     //     case 400:
-//     //       alert('El usuario no existe');
-//     //       break;
-//     //     default:
-//     //       alert('Error') 
-//     //   }
-//     // })
-//   }
-
-// }

@@ -72,4 +72,13 @@ export class PsicologosService{
             this.opt
         )
     }
+
+    adminlogin(userParams){
+        const params = JSON.stringify(userParams);
+        return this.http.post(
+            `${this.apiURL}/adminlogin`,
+            params,
+            this.opt
+        )
+    }
 }

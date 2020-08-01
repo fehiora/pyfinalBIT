@@ -9,7 +9,8 @@ var UserSchema = new Schema({
     licenciaSo: String,
     celular: Number,
     email: String,
-    contrasenia: String
+    contrasenia: String,
+    admin: Boolean
 });
 
 module.exports = mongoose.model('User', UserSchema);
