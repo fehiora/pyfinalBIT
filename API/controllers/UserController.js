@@ -179,6 +179,8 @@ function login(req,res){
     })
 }
 
+//Séptima función para buscar por el ID y se pueda loguear el administrador
+
 function adminlogin(req,res){
     var params = req.body;
 
@@ -219,7 +221,7 @@ function adminlogin(req,res){
     })
 }
 
-//Séptima función para buscar por el ID y que se puedan editar los usuarios desde el front
+//Octava función para buscar por el ID y que se puedan editar los usuarios desde el front
 
 function getUser(req,res){
     let idUser = req.params.id;
