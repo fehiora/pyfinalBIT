@@ -17,6 +17,8 @@ import { UserShowComponent } from './mycomponents/user-show/user-show.component'
 import { UpdataUserComponent } from './mycomponents/updata-user/updata-user.component';
 import { SearchUserComponent } from './mycomponents/search-user/search-user.component';
 import { LoginAdminComponentComponent } from './mycomponents/login-admin/login-admin.component';
+import { MenuTrabajoComponent } from './mycomponents/menu-trabajo/menu-trabajo.component';
+import { AreaTrabajoComponent } from './mycomponents/area-trabajo/area-trabajo.component';
 
 const appRoutes: Routes = [
   {path:'',component: HomeComponentComponent},
@@ -24,7 +26,9 @@ const appRoutes: Routes = [
   {path:'showAllUsers', component: UserShowComponent},  
   {path: 'editUser/:id', component: UpdataUserComponent},
   {path: 'deleteUser/:id', component: UserShowComponent},
-  {path: 'searchUser', component: SearchUserComponent}
+  {path: 'searchUser', component: SearchUserComponent},
+  {path: 'menuTrabajo', component: MenuTrabajoComponent},  //Solo la para accesos identificados
+  {path: 'areaTrabajo', component: AreaTrabajoComponent}  //Solo la para accesos identificados
 ]
 
 @NgModule({
@@ -40,7 +44,9 @@ const appRoutes: Routes = [
     UserShowComponent,
     UpdataUserComponent,
     SearchUserComponent,
-    LoginAdminComponentComponent
+    LoginAdminComponentComponent,
+    MenuTrabajoComponent,
+    AreaTrabajoComponent
   ],
   imports: [ /**Módulos de ángular que se importan para que funcionen */
     BrowserModule,
