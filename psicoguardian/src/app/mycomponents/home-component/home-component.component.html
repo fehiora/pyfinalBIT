@@ -1,32 +1,40 @@
+
 <div class="container">
+  <!-- Slider izquierda -->
     <div class="row">
         <div class="col-md-6">
             <app-slider-component></app-slider-component>
         </div>
+  <!-- Parte derecha del home -->
         <div class="col-md-6">
+            <!-- Llamando al componente loging -->
             <app-login-component></app-login-component>
+
+           <!-- Botones de registro y administrador -->
+            <section class="botones">
+              <div class="container">
+                  <a class="btn btn-info" routerLink="/registro" type="button">¿Aún no tienes usuario?  |  Registrate</a>
+                   <button class="btn btn-info" data-toggle="modal" data-target="#modal-form" >Administrador</button>
+              </div>
+              
+              <div class="modal" tabindex="-1" role="dialog" id="modal-form">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Ingreso de Administrador</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <app-login-admin-component></app-login-admin-component>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
         </div>
     </div>
 </div>
 
 
-<div class="container">
-    <a class="btn btn-info btn-lg btn-block" routerLink="/registro" type="button">¿Aún no tienes usuario?       |       Registrate</a>
-     <a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#modal-form" >Administrador</a>
-</div>
-
-<div class="modal" tabindex="-1" role="dialog" id="modal-form">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Ingreso de Administrador</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <app-login-admin-component></app-login-admin-component>
-        </div>
-      </div>
-    </div>
-  </div>

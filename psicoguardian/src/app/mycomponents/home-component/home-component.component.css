@@ -2,3 +2,11 @@
     margin-top: 2%;
 }
 
+.botones > .container {
+ margin-top: 4%;
+}
+
+.botones > .container > .btn {
+    margin-right: 0.5%;
+   }
+
