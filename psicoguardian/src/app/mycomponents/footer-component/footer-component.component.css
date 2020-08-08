@@ -13,14 +13,12 @@
 }
 
 .derechos{
-    width: 30%;
     padding-top: 0.4%;
     padding-left: 2%;
     display: flex;
 }
 
 .redes {
-    width: 70%;
     padding-top: 0.5%;
     padding-left: 4%;
     display: flex;
