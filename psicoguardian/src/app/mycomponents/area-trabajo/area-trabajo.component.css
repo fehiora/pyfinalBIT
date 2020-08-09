@@ -1,3 +1,25 @@
 .ubication{
-    margin-top: 5%;
+    margin-top: 3%;
+    padding: 0%;
+}
+
+.titulo{
+    margin-bottom: 0% !important;
+    padding: 1%;
+    background-color: rgb(39,104,255);
+    border: solid rgba(39,104,255,0.8);
+    border-width: thin;
+    border-radius: 0.5em;
+    color: white;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 3em;
+}
+
+.contenido{
+    margin-top: 0% !important;
+    border: solid rgba(39,104,255,0.3);
+    border-width: thin;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    height: 15em;
 }

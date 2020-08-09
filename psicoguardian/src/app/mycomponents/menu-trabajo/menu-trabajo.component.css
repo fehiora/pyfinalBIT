@@ -1,0 +1,70 @@
+.container{
+    width: 100%;
+    padding: 0%;
+    border-width: thin;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: smaller;
+}
+
+.titulo{
+    margin: inherit;
+    padding: 12%;
+    background-color: rgb(39,104,255);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    border: solid rgba(39,104,255,0.8);
+    border-width: thin;
+    border-radius: 0.5em;
+}
+
+ul {
+    padding: 0%;
+    list-style-type: none;
+}
+
+li{
+    padding: 2%;
+}
+
+li a {
+    display: block;
+    background-color:rgb(39,104,255);
+    margin-top: 20%;
+    padding: 2%;
+    text-decoration: none;
+    list-style-type: none;
+    color:white;
+    }
+
+li a:hover {
+    background-color: rgba(62, 2, 112, 0.294);
+    color: white;
+    }
+
+ul ul{
+    margin-left: 30%;
+    overflow: visible;
+    padding: 2%;
+    text-align: center;
+    z-index: 0;
+    display: inline-flexbox;
+    flex-direction: row;
+    width: 7em;
+}
+
+.dropdown {
+        position: relative;
+        display: inline-block;
+        }
+
+.dropdown-content {
+        display: none;
+        position: relative;
+        z-index: 1;
+        }
+        
+.dropdown:hover .dropdown-content {
+        display: inline-block;
+        }

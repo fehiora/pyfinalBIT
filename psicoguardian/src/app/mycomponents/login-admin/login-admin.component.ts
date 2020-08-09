@@ -27,7 +27,7 @@ export class LoginAdminComponentComponent {
           alert("Los datos no coinciden");
           break;
         case 200:
-          alert("Sesion iniciada");
+          alert("Sesion de administrador iniciada");
           this.closeModal.nativeElement.click();
           this.router.navigateByUrl('/showAllUsers');
           break;

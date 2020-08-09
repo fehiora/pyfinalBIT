@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms'
+import { Router } from '@angular/router';
 
 import {PsicologosService} from '../../services/user.service';
 import {User} from '../../models/user';
@@ -12,10 +13,11 @@ import {User} from '../../models/user';
 })
 export class LoginComponentComponent {
   constructor(
-    private service: PsicologosService
+    private service: PsicologosService,
+    private router: Router
   ) {}
 
-  onSubmit(f: NgForm) {
+  userOnSubmit(f: NgForm) {
     console.log(f.value);
     console.log(f.valid);
 
@@ -25,7 +27,7 @@ export class LoginComponentComponent {
           alert("Los datos no coinciden");
           break;
         case 200:
-          alert("Sesion iniciada");
+          this.router.navigateByUrl('/areaTrabajo');
           break;
         case 400:
           alert("El usuario no existe");
