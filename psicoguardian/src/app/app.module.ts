@@ -22,6 +22,7 @@ import { AreaTrabajoComponent } from './mycomponents/area-trabajo/area-trabajo.c
 
 const appRoutes: Routes = [
   {path:'',component: HomeComponentComponent},
+  {path:'login',component: LoginComponentComponent},
   {path:'registro',component: UserSigninComponent},
   {path:'showAllUsers', component: UserShowComponent},  
   {path: 'editUser/:id', component: UpdataUserComponent},

@@ -45,7 +45,6 @@ export class PsicologosService{
     getUser(userId){
         return this.http.get(
             `${this.apiURL}/getUser/${userId}`,
-            //this.apiURL + '/getUser' + userId,
             this.opt
         )
     }
@@ -57,12 +56,6 @@ export class PsicologosService{
         )
     }
 
-    // searchUserByDocument(documento){
-    //     return this.http.get(
-    //        `${this.apiURL}/:documento${documento}`,
-    //        this.opt
-    //     )
-    // }
 
     login(userParams){
         const params = JSON.stringify(userParams);
