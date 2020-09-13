@@ -9,7 +9,7 @@ import {HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable() //permite usar el injectable en otros lados del proyecto
 export class PsicologosService{
-    apiURL = 'http://localhost:3000/apipsicoguardian';
+    apiURL = 'http://localhost:3000/apipsicoguardian/user';
     opt = {headers: new HttpHeaders({ 'Content-type': 'application/json' })};
     constructor(
         private http: HttpClient

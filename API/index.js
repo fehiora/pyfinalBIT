@@ -4,7 +4,11 @@ const mongoose = require('mongoose'); //Requiriendo mongoose para conectar la ba
 const app = require('./app.js') //Requiriendo app para poder trabajar con express
 const port = 3000; //Se especifica el puerto por el cual se va a conectar la api
 
-mongoose.connect('mongodb://localhost:27017/psicologos', {useNewUrlParser: true, useUnifiedTopology: true}, (error, res) => {
+mongoose.connect('mongodb://localhost:27017/psicologos', {
+    useNewUrlParser: true, 
+    useUnifiedTopology: true
+}, (error, res) => {
+
     if(error){
         console.error('Error de conexión', error);
     }
@@ -14,5 +18,6 @@ mongoose.connect('mongodb://localhost:27017/psicologos', {useNewUrlParser: true,
             console.log('Estamos escuchando el puerto', port)
         })
     }
+    
 }); //Se puede nombrar la bd sin haberla creado
 

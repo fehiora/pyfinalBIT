@@ -1,3 +1,8 @@
+/* 
+* Este archivo define el modelo base para el manejo
+* de usuarios
+*/
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 

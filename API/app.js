@@ -1,16 +1,48 @@
-//Este archivo tiene toda la lógica del proyecto
+// Este archivo tiene toda la lógica del proyecto
 
-//Bloque de código para requerir de cosas de los otros archivos
-const express = require('express'); //se está requiriendo express
-const routes = require('./routes/userRoutes');
-const bodyParser = require('body-parser'); //el bodyParser convierte en archivos jason lo que viene del body. Antes de crearlo es necesario instalarlo con npm instal. body-parse --save
-const cors = require('cors'); //cors es para dar permisos de acceso a la API desde otros lados, el cors se debe instalar
+/* Inicio del Bloque de código para requerir de cosas de los otros archivos */
+/* ------------------------------------------------------------------------ */
 
-const app = express(); //esta constante se crea para convertir express en un objeto para poder acceder a todos sus métodos
-app.use(bodyParser.json()); //se usa para analizar los datos que vienen de la url considerandolo como un jason
+// Se está requiriendo express
+const express = require('express');
+// Variables con las rutas para cada unidad de negocio
+const userRoutes = require('./routes/userRoutes');
+// const patientRoutes = require('./routes/patientRoutes');
+
+// El bodyParser convierte en archivos json 
+// lo que viene del body. Antes de crearlo es 
+// necesario instalarlo con 'npm install body-parse --save'
+const bodyParser = require('body-parser'); 
+// El modulo 'cors' se usa para gestionar 
+// permisos de acceso a la API desde los clientes. 
+// 'cors' se debe instalar con 'npm install cors'
+const cors = require('cors');
+
+/* ---------------------- */
+/* Fin del Bloque require */
+
+
+// Esta constante contiene una instancia del objeto express 
+// y la usaremos para poder acceder a todos sus métodos
+const app = express();
+
+// Esta linea nos permite analizar los datos que vienen 
+// en la petición (como la url y los datos) 
+// y los conviente a un objeto JSON
+app.use(bodyParser.json()); 
 app.use(cors());
 
-app.use('/apipsicoguardian', routes);
+// En esta linea definimos la raíz de nuestro
+// servicio RESTful API, toda petición debe comenzar
+// con este prefijo de ruta, el segundo argumento (routes)
+// se encargará de direccionar las peticiones a la
+// ruta final adecuada para su proceso 
+app.use('/apipsicoguardian/user', userRoutes);
+// app.use('/psicoguardian/api/user', userRoutes);
+// app.use('/apipsicoguardian/patient', patientRoutes);
 
+// En esta linea exportamos el objeto 'app'
+// para ser importado como modulo en donde se requiera
+// dentro de nuestra aplicación
 module.exports = app;
 
