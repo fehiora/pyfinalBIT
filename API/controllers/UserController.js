@@ -1,4 +1,3 @@
-
 // Llamamos el modelo para ejecutar las operaciones
 // necesarios en cada operación
 const User = require('../models/user');
@@ -12,7 +11,7 @@ function create(req, res) {
     // Variable con una instancia del modelo user
     // que usaremos para registrar un nuevo usuario
     // en la BD de acuerdo al modelo definido en user.js
-    var user = new User(); 
+    var user = new User();
 
     // Variable donde asignaremos los datos
     // incluidos en el cuerpo (body) de la petición (req)
@@ -31,24 +30,24 @@ function create(req, res) {
     user.contrasenia = params.contrasenia;
 
     // Función para guardar el nuevo registro en el modelo
-    user.save((error, usercreated) =>{
+    user.save((error, usercreated) => {
         // Ingresa sí hay un error de servidor
-        if(error){
+        if (error) {
             console.error(error);
             res.status(500).send({
                 statusCode: 500,
                 message: "Error en el servidor"
             })
-        // Ingresa sí no hay error de servidor
-        }else{
+            // Ingresa sí no hay error de servidor
+        } else {
             // Ingresa sí el usuario no fue creado
-            if(!usercreated){
+            if (!usercreated) {
                 res.status(400).send({
                     statusCode: 400,
                     message: "Error al crear al usuario"
                 })
-            // Ingresa sí el usuario fue creado con éxito
-            }else{
+                // Ingresa sí el usuario fue creado con éxito
+            } else {
                 res.status(200).send({
                     statusCode: 200,
                     message: "Usuario creado correctamente",
@@ -64,7 +63,7 @@ function create(req, res) {
 // parámetros:
 // 'req': objeto con todos lo datos de la petición
 // 'res': el objeto a usar para gestionar la respuesta
-function update(req, res){
+function update(req, res) {
     // Variable donde asignaremos los datos
     // incluidos en el cuerpo (body) de la petición (req)
     var dataUser = req.body;
@@ -76,19 +75,19 @@ function update(req, res){
 
     // Función para buscar un usuario y actualizar 
     // los datos del registro en el modelo
-    User.findByIdAndUpdate(id, dataUser, (error, userUpdated)=> {
-        if(error){
+    User.findByIdAndUpdate(id, dataUser, (error, userUpdated) => {
+        if (error) {
             res.send({
                 message: "Error de conexión con el servidor",
                 statusCode: 500
             })
-        }else{
-            if(!userUpdated){
+        } else {
+            if (!userUpdated) {
                 res.send({
                     message: "No se modificó el usuario",
                     statusCode: 400
                 })
-            }else{
+            } else {
                 res.send({
                     message: "Usuario modificado",
                     statusCode: 200,
@@ -107,7 +106,7 @@ function update(req, res){
 // Recibe dos parámetros:
 // 'req': objeto con todos lo datos de la petición
 // 'res': el objeto a usar para gestionar la respuesta
-function remove(req, res){
+function remove(req, res) {
     // Variable donde asignaremos el 'id' especifico
     // de la petición incluido en el cuerpo (body) 
     // de la petición (req)
@@ -116,20 +115,20 @@ function remove(req, res){
     // función para buscar por el 'id' un usuario
     // y borrarlo de la BD
     User.findByIdAndDelete(id, (error, userDeleted) => {
-        if (error){
+        if (error) {
             res.send({
                 message: "Error de conexión con el servidor",
                 statusCode: 500
-            }) 
-        }else{
-            if(!userDeleted){
+            })
+        } else {
+            if (!userDeleted) {
                 res.send({
                     message: "Error al eliminar el usuario",
                     statusCode: 400
                 })
-            }else{
+            } else {
                 res.send({
-                    message:"Usuario eliminado correctamente",
+                    message: "Usuario eliminado correctamente",
                     statusCode: 200
                 })
             }
@@ -145,26 +144,26 @@ function remove(req, res){
 // Recibe dos parámetros:
 // 'req': objeto con todos lo datos de la petición
 // 'res': el objeto a usar para gestionar la respuesta
-function listAll(req,res){
-    User.find({},(error, userListed) => {
-        if(error){
+function listAll(req, res) {
+    User.find({}, (error, userListed) => {
+        if (error) {
             res.send({
                 message: "Error de conexión con el servidor",
                 statusCode: 500
             })
-        }else{
-            if(!userListed){
+        } else {
+            if (!userListed) {
                 res.send({
-                    message:"No hay ningún usuario creado",
+                    message: "No hay ningún usuario creado",
                     statusCode: 400
                 })
-            }else{
+            } else {
                 res.send({
                     message: "Esta es la lista de usuarios:",
                     statusCode: 200,
                     data: userListed
                 })
-            }     
+            }
         }
     })
 }
@@ -176,29 +175,31 @@ function listAll(req,res){
 // Recibe dos parámetros:
 // 'req': objeto con todos lo datos de la petición
 // 'res': el objeto a usar para gestionar la respuesta
-function listOne(req,res){
+function listOne(req, res) {
     // Variable donde asignaremos el 'documento' especifico,
     // incluido en el cuerpo (body) de la petición (req)
     var documentNumber = req.params.documento;
 
-    User.findOne({documento: documentNumber}, (error,userDetalled)=>{
-        if(error){
+    User.findOne({
+        documento: documentNumber
+    }, (error, userDetalled) => {
+        if (error) {
             res.send({
                 message: "Error de conexión",
-                statusCode:500
+                statusCode: 500
             })
-        }else{
-            if(!userDetalled){
+        } else {
+            if (!userDetalled) {
                 res.send({
                     message: "El usuario no existe",
                     statusCode: 400
                 })
-            }else{
+            } else {
                 res.send({
                     message: "Esta es la información del usuario buscado:",
                     data: userDetalled
                 })
-            }    
+            }
         }
     })
 }
@@ -210,36 +211,38 @@ function listOne(req,res){
 // Recibe dos parámetros:
 // 'req': objeto con todos lo datos de la petición
 // 'res': el objeto a usar para gestionar la respuesta
-function login(req,res){
+function login(req, res) {
     // Variable donde asignaremos los datos
     // incluidos en el cuerpo (body) de la petición (req)
     var params = req.body;
 
-    User.findOne({documento: params.documento}, (error,userLogged)=>{
+    User.findOne({
+        documento: params.documento
+    }, (error, userLogged) => {
         // Ingresa sí hay un error de servidor
-        if(error){
+        if (error) {
             res.send({
                 message: "Error de conexión",
                 statusCode: 500
             })
-        }else{
+        } else {
             // Ingresa sí el documento consultado no existe
-            if(!userLogged){
+            if (!userLogged) {
                 res.send({
                     message: "El usuario no existe",
                     statusCode: 400
                 })
-            }else{
+            } else {
                 // Ingresa sí la contraseña suministrada coincide 
                 // con la registrada en la BD
-                if(userLogged.contrasenia == params.contrasenia){
+                if (userLogged.contrasenia == params.contrasenia) {
                     res.send({
                         message: "Sesión Iniciada",
                         statusCode: 200
                     })
-                // Ingresa sí la contraseña suministrada no coincide 
-                // con la registrada en la BD
-                }else {
+                    // Ingresa sí la contraseña suministrada no coincide 
+                    // con la registrada en la BD
+                } else {
                     res.send({
                         message: "Usuario o contraseña no coinciden",
                         statusCode: 204
@@ -258,45 +261,47 @@ function login(req,res){
 // Recibe dos parámetros:
 // 'req': objeto con todos lo datos de la petición
 // 'res': el objeto a usar para gestionar la respuesta
-function adminlogin(req,res){
+function adminlogin(req, res) {
     // Variable donde asignaremos los datos
     // incluidos en el cuerpo (body) de la petición (req)
     var params = req.body;
 
-    User.findOne({documento: params.documento}, (error,userLogged)=>{
+    User.findOne({
+        documento: params.documento
+    }, (error, userLogged) => {
         // Ingresa sí hay un error de servidor
-        if(error){
+        if (error) {
             res.send({
                 message: "Error de conexión",
                 statusCode: 500
             })
-        }else{
+        } else {
             // Ingresa sí el documento consultado no existe en la BD
-            if(!userLogged){
+            if (!userLogged) {
                 res.send({
                     message: "El usuario no existe",
                     statusCode: 400
                 })
-            }else{
+            } else {
                 // Ingresa sí la contraseña suministrada coincide 
                 // con la registrada en la BD
-                if(userLogged.contrasenia == params.contrasenia){
+                if (userLogged.contrasenia == params.contrasenia) {
                     // Ingresa sí el usuario es administrador
-                    if (userLogged.admin){
+                    if (userLogged.admin) {
                         res.send({
                             message: "Sesión Iniciada",
                             statusCode: 200
                         })
-                    // Ingresa sí el usuario no es administrador
-                    }else{
+                        // Ingresa sí el usuario no es administrador
+                    } else {
                         res.send({
                             message: "El usuario no es Administrador",
                             statusCode: 403
                         })
                     }
-                // Ingresa sí la contraseña suministrada no coincide 
-                // con la registrada en la BD    
-                }else {
+                    // Ingresa sí la contraseña suministrada no coincide 
+                    // con la registrada en la BD    
+                } else {
                     res.send({
                         message: "Usuario o contraseña no coinciden",
                         statusCode: 204
@@ -311,11 +316,11 @@ function adminlogin(req,res){
 // para ser importado como modulo en donde se requiera
 // dentro de nuestra aplicación
 module.exports = {
-   create,
-   update,
-   remove,
-   listAll,
-   listOne,
-   login,
-   adminlogin
+    create,
+    update,
+    remove,
+    listAll,
+    listOne,
+    login,
+    adminlogin
 }

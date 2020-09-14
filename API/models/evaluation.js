@@ -9,7 +9,7 @@ const Schema = mongoose.Schema;
 var EvaluationSchema = new Schema({
     id_psicologo: String,
     id_trabajador: String,
-    anio: String,
+    anio_evaluation: String,
     nivel_riesgo: String,
     nivel_estres: String,
     rpriorizado1: String,

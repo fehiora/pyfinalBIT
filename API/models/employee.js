@@ -18,18 +18,12 @@ var EmployeeSchema = new Schema({
     fecha_ingreso_cargo: String,
     celular: Number,
     email: String,
-    nivel_riesgo: String,
-    nivel_estres: String,
-    rpriorizado1: String,
-    rpriorizado2: String,
-    rpriorizado3: String,
-    rep_personalidad: String,
-    rep_afrontamiento: String,
     convivencia: String,
     per_convivencia: String,
     per_conv_parentesco: String,
     per_apoyo: String,
     per_apoy_parentesco: String,
+    estado: Boolean,
 });
 
-module.exports = mongoose.model('User', EmployeeSchema);
+module.exports = mongoose.model('Employee', EmployeeSchema);
