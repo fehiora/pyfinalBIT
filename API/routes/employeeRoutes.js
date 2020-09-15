@@ -14,6 +14,9 @@ const employeController = require('../controllers/employeeController')
 
 api.post('/employeeCreate', employeController.create);
 api.put('/:id', employeController.update);
+api.get('/employeeListAll/', employeController.listAll);
 api.get('/:documento', employeController.listOne);
+api.delete('/:documento', employeController.softDelete);
 
-module.exports =api
+
+module.exports = api

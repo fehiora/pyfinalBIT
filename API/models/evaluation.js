@@ -19,4 +19,4 @@ var EvaluationSchema = new Schema({
     rep_afrontamiento: String,
 });
 
-module.exports = mongoose.model('User', EvaluationSchema);
+module.exports = mongoose.model('Evaluation', EvaluationSchema);

@@ -1,4 +1,3 @@
-const employee = require('../models/employee');
 // Llamamos el modelo para ejecutar las operaciones
 // necesarios en cada requerimiento
 const Employee = require('../models/employee');
@@ -49,7 +48,7 @@ function create(req, res) {
             console.error(error);
             res.status(500).send({
                 statusCode: 500,
-                message: "Error en el servidor"
+                message: "Error en el servidor al crear registro"
             })
             // Ingresa sí no hay error de servidor
         } else {
@@ -91,7 +90,7 @@ function update(req, res) {
     Employee.findByIdAndUpdate(id, dataemployee, (error, employeeUpdated) => {
         if (error) {
             res.send({
-                message: "Error de conexión con el servidor",
+                message: "Error de conexión con el servidor al actualizar registro",
                 statusCode: 500
             })
         } else {
@@ -129,7 +128,7 @@ function listOne(req, res) {
     }, (error, employeeDetalled) => {
         if (error) {
             res.send({
-                message: "Error de conexión",
+                message: "Error de conexión al consultar por documento",
                 statusCode: 500
             })
         } else {
@@ -148,6 +147,80 @@ function listOne(req, res) {
     })
 }
 
+// Cuarta función. Esta función responde a la 
+// petición de listar usuario. Esta función
+// no requiere parametros de consulta, y trae 
+// un toda la información de los trabajadores 
+// registrada en la BD.
+// Recibe dos parámetros:
+// 'req': objeto con todos lo datos de la petición
+// 'res': el objeto a usar para gestionar la respuesta
+// el estado : true es lo que me permite listar a los trabajadores activos
+function listAll(req, res) {
+    Employee.find({ estado: true }, (error, employeeListed) => {
+        if (error) {
+            console.log("Error listAll " + error);
+            res.send({
+                message: "Error de conexión con el servidor al consultar lista",
+                statusCode: 500
+            })
+        } else {
+            if (!employeeListed) {
+                res.send({
+                    message: "No hay ningún trabajador creado",
+                    statusCode: 400
+                })
+            } else {
+                res.send({
+                    message: "Esta es la lista de trabajadores:",
+                    statusCode: 200,
+                    data: employeeListed
+                })
+            }
+        }
+    })
+}
+
+//La siguiente es la función para borrar trabajador
+//Este borrado es "suave" porque lo que hace es no 
+//listar mostrar al trabajador en el listado sin 
+//borrarlo de la BD.
+//findOneAndUpdate requiere el parámetro por el que voy a buscar (documento)
+//y el parámetro que voy a modificar (estado)
+
+function softDelete (req, res) {
+
+    var documentoNumber = req.params.documento;
+    
+
+    Employee.findOneAndUpdate({ documento: documentoNumber }, { estado: false }, (error, employeeDeleted) => {
+
+        if (error) {
+            res.send({
+                message: "Error de conexión al borrar trabajador",
+                statusCode: 500
+            })
+        }else{
+            if(!employeeDeleted){
+                res.send({
+                    message: "Error al borrar trabajador",
+                    statusCode: 400
+                })
+            }else {
+                if(employeeDeleted.estado === false) {
+                    res.send({
+                        message: "Trabajador Borrado",
+                        statusCode: 200
+                    })
+                }
+            }
+        }
+    })
+
+}
+
+
+
 
 // En esta linea exportamos un objeto anónimo
 // para ser importado como modulo en donde se requiera
@@ -156,4 +229,6 @@ module.exports = {
     create,
     update,
     listOne,
+    listAll,
+    softDelete,
 }

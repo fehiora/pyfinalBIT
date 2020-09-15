@@ -6,7 +6,8 @@ const port = 3000; //Se especifica el puerto por el cual se va a conectar la api
 
 mongoose.connect('mongodb://localhost:27017/psicologos', {
     useNewUrlParser: true, 
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 }, (error, res) => {
 
     if(error){
