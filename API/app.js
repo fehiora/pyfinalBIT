@@ -8,6 +8,7 @@ const express = require('express');
 // Variables con las rutas para cada unidad de negocio
 const userRoutes = require('./routes/userRoutes');
 const employeeRoutes = require('./routes/employeeRoutes');
+const evaluationRoutes = require ('./routes/evaluationRoutes');
 // const patientRoutes = require('./routes/patientRoutes');
 
 // El bodyParser convierte en archivos json 
@@ -40,6 +41,7 @@ app.use(cors());
 // ruta final adecuada para su proceso 
 app.use('/apipsicoguardian/user', userRoutes);
 app.use('/apipsicoguardian/employee', employeeRoutes);
+app.use('/apipsicoguardian/evaluation', evaluationRoutes);
 // app.use('/psicoguardian/api/user', userRoutes);
 // app.use('/apipsicoguardian/patient', patientRoutes);
 

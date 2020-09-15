@@ -10,13 +10,12 @@ const express = require('express');
 const employeeController = require('../controllers/employeeController');
 
 const api = express.Router();
-const employeController = require('../controllers/employeeController')
 
-api.post('/employeeCreate', employeController.create);
-api.put('/:id', employeController.update);
-api.get('/employeeListAll/', employeController.listAll);
-api.get('/:documento', employeController.listOne);
-api.delete('/:documento', employeController.softDelete);
+api.post('/employeeCreate', employeeController.create);
+api.put('/:id', employeeController.update);
+api.get('/employeeListAll/', employeeController.listAll);
+api.get('/:documento', employeeController.listOne);
+api.delete('/:documento', employeeController.softDelete);
 
 
 module.exports = api

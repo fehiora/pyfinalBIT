@@ -159,7 +159,6 @@ function listOne(req, res) {
 function listAll(req, res) {
     Employee.find({ estado: true }, (error, employeeListed) => {
         if (error) {
-            console.log("Error listAll " + error);
             res.send({
                 message: "Error de conexión con el servidor al consultar lista",
                 statusCode: 500
