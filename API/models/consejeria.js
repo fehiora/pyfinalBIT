@@ -5,12 +5,13 @@ var ConsejeriaSchema = new Schema ({
     documento_trabajador: Number,
     lugar: String,
     fecha: String,
-    duración: Number,
+    duracion: Number,
     tipo: String,
     hallazgos : String,
     recomendaciones : String,
     seguimiento: Boolean,
-    rem_salud: Boolean
+    rem_salud: Boolean,
+    cerrar_consejeria : Boolean
 });
 
 module.exports = mongoose.model('Consejeria', ConsejeriaSchema);

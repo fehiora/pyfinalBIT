@@ -27,7 +27,7 @@ function create(req, res) {
     employee.genero = params.genero;
     employee.tipo_doc = params.tipo_doc
     employee.documento = params.documento;
-    employee.edad = params.edad;
+    employee.fecha_nacimiento = params.fecha_nacimiento;
     employee.fecha_ingreso_cia = params.fecha_ingreso_cia;
     employee.cargo_actual = params.cargo_actual;
     employee.fecha_ingreso_cargo = params.fecha_ingreso_cargo;

@@ -69,39 +69,38 @@ function modificate (req, res) {
 
 //tercera función para listar las evaluaciones que se han hecho a un trabajador
 
-// function listAll (req, res) {
+function listAll (req, res) {
 
-//     var idNumber = req.params.id_trabajador
-//     Evaluation.find ({id: idNumber}, (error,evaluationListed) => {
-//         if (error) {
-//             res.send ({
-//                 message: "Error de conexion al listar evaluaciones",
-//                 statusCode: 500
-//             })
-//         }else{
-//             if(!evaluationListed) {
-//                 res.send({
-//                     message: "No hay evaluaciones guardadas",
-//                     statusCode: 400
-//                 })
-//             }else {
-//                 res.send ({
-//                     message: "Esta es la lista de evaluaciones del trabajador",
-//                     statusCode: 200,
-//                     data: evaluationListed
-//                 })
-//             }
-//         }
-//     })
-// }
+    var idNumber = req.params.id_trabajador
+
+    Evaluation.find ({id_trabajador: idNumber}, (error,evaluationListed) => {
+        if (error) {
+            res.send ({
+                message: "Error de conexion al listar evaluaciones",
+                statusCode: 500
+            })
+        }else{
+            if(!evaluationListed) {
+                res.send({
+                    message: "No hay evaluaciones guardadas",
+                    statusCode: 400
+                })
+            }else {
+                res.send ({
+                    message: "Esta es la lista de evaluaciones del trabajador",
+                    statusCode: 200,
+                    data: evaluationListed
+                })
+            }
+        }
+    })
+}
 
 //Cuarta funcion para ver el detalle de una sola evaluación
 
 function listOne (req, res) {
-    var idNumberPropio = req.params._id;
-    Evaluation.findOne ({
-        documento: idNumberPropio
-    }, (error, evaluationDetalled) => {
+    var idNumberPropio = req.params.evaluation_id;
+    Evaluation.findById (idNumberPropio, (error, evaluationDetalled) => {
         if(error) {
             res.send({
                 message: "Error de conexión al listar una evaluación",
@@ -128,6 +127,6 @@ function listOne (req, res) {
 module.exports = {
     create,
     modificate,
-    // listAll,
+    listAll,
     listOne,
 }

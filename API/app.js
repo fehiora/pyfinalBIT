@@ -9,6 +9,7 @@ const express = require('express');
 const userRoutes = require('./routes/userRoutes');
 const employeeRoutes = require('./routes/employeeRoutes');
 const evaluationRoutes = require ('./routes/evaluationRoutes');
+const consejeriaRoutes = require ('./routes/consejeriaRoutes');
 // const patientRoutes = require('./routes/patientRoutes');
 
 // El bodyParser convierte en archivos json 
@@ -42,8 +43,7 @@ app.use(cors());
 app.use('/apipsicoguardian/user', userRoutes);
 app.use('/apipsicoguardian/employee', employeeRoutes);
 app.use('/apipsicoguardian/evaluation', evaluationRoutes);
-// app.use('/psicoguardian/api/user', userRoutes);
-// app.use('/apipsicoguardian/patient', patientRoutes);
+app.use('/apipsicoguardian/consejeria', consejeriaRoutes);
 
 // En esta linea exportamos el objeto 'app'
 // para ser importado como modulo en donde se requiera

@@ -6,7 +6,7 @@ const api = express.Router();
 
 api.post('/evaluationCreate', evaluationController.create);
 api.put('/:id', evaluationController.modificate);
-// api.get('/:id/', evaluationController.listAll);
-api.get('/:id', evaluationController.listOne);
+api.get('/list/:id_trabajador', evaluationController.listAll);
+api.get('/detail/:evaluation_id', evaluationController.listOne);
 
 module.exports = api
