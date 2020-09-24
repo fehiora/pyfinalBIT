@@ -1,14 +1,14 @@
 .title{
-    margin: 2%;
-    padding: 5% 2%;
+    margin-top: 2%;
+    padding: 2%;
     display: flex;
+    justify-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #038080;
 }
 
-.btn{
-    margin-left: 10%;
-}
-
-thead {
+.subTitle{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #038080;
     text-align: center;
 }

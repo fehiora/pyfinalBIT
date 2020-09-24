@@ -19,13 +19,14 @@ import { SearchUserComponent } from './mycomponents/search-user/search-user.comp
 import { LoginAdminComponentComponent } from './mycomponents/login-admin/login-admin.component';
 import { MenuTrabajoComponent } from './mycomponents/menu-trabajo/menu-trabajo.component';
 import { AreaTrabajoComponent } from './mycomponents/area-trabajo/area-trabajo.component';
+// import { EmployeesComponent } from './mycomponents/employees/employees.component';
 
 const appRoutes: Routes = [
   {path:'',component: HomeComponentComponent},
   {path:'login',component: LoginComponentComponent},
   {path:'registro',component: UserSigninComponent},
   {path:'showAllUsers', component: UserShowComponent},  
-  {path: 'editUser/:id', component: UpdataUserComponent},
+  {path: 'editUser/:documento', component: UpdataUserComponent},
   {path: 'deleteUser/:id', component: UserShowComponent},
   {path: 'searchUser', component: SearchUserComponent},
   {path: 'menuTrabajo', component: MenuTrabajoComponent},  //Solo la para accesos identificados
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     SearchUserComponent,
     LoginAdminComponentComponent,
     MenuTrabajoComponent,
-    AreaTrabajoComponent
+    AreaTrabajoComponent,
+    // EmployeesComponent
   ],
   imports: [ /**Módulos de ángular que se importan para que funcionen */
     BrowserModule,

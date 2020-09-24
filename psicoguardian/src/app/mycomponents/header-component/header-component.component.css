@@ -1,11 +1,11 @@
 .container{
-    margin-top: 2%;
+    margin-top: 1%;
 }
 
 
 .color{
     background-color:#00c9c9;
-    margin-top: 2%;
+    margin-top: 1%;
     border-bottom-right-radius: 1em;
     justify-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -19,3 +19,4 @@
     width: 25em;
     margin-top: 0.5%;
 }
+

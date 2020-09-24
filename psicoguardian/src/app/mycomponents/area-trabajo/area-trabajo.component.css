@@ -3,10 +3,11 @@
     padding: 0%;
 }
 
+
 .titulo{
     margin-bottom: 0% !important;
     padding: 1%;
-    background-color: rgb(39,104,255);
+    background-color: #038080;
     border: solid rgba(39,104,255,0.8);
     border-width: thin;
     border-radius: 0.5em;
@@ -35,5 +36,5 @@
     border: solid rgba(39,104,255,0.3);
     border-width: thin;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    height: 15em;
+    height: 100%;
 }

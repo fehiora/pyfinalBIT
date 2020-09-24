@@ -9,7 +9,7 @@
 .titulo{
     margin: inherit;
     padding: 12%;
-    background-color: rgb(39,104,255);
+    background-color: #038080;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -30,7 +30,7 @@ li{
 
 li a {
     display: block;
-    background-color:rgb(39,104,255);
+    background-color: #038080;
     margin-top: 20%;
     padding: 2%;
     text-decoration: none;
@@ -39,7 +39,7 @@ li a {
     }
 
 li a:hover {
-    background-color: rgba(62, 2, 112, 0.294);
+    background-color:#00c9c9;
     color: white;
     }
 

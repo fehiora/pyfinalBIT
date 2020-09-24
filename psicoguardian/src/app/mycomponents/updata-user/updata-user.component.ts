@@ -11,7 +11,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class UpdataUserComponent implements OnInit {
   public user: User;
-  public idUser;  
+  public documentUser;  
   constructor(
     private service: PsicologosService,
     private routerParams : ActivatedRoute,
@@ -19,8 +19,12 @@ export class UpdataUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.idUser = this.routerParams.snapshot.paramMap.get('id');
+    console.log('iniciando User Edit');
+    this.documentUser = this.routerParams.snapshot.paramMap.get('documento');
+    console.log('consultando User');
     this.getDataUser();
+    console.log('cargado');
+
   }
 
   updateUser(){
@@ -35,9 +39,10 @@ export class UpdataUserComponent implements OnInit {
   } 
 
   getDataUser(){
-    this.service.getUser(this.idUser).subscribe( (res : any) => {
-     // console.log(res.dataUser);
-      this.user = res.dataUser
+    this.service.getUser(this.documentUser).subscribe( (res : any) => {
+      console.log('User:');
+      console.log(res.data);
+      this.user = res.data
 
     })
   }

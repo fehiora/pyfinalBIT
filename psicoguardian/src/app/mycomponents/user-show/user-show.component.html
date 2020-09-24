@@ -1,18 +1,18 @@
 <!-- *ngFor = "let user of allUser" recorre el arreglo de todos los usuarios. -->
 <!-- El uso de las llaves es para imprimir información de JS -->
 
-<div class="container">
+<div class="ml-5">
 
     <section class="title">
         <h1>PSICÓLOGOS REGISTRADOS</h1>
-        <a routerLink='' class="btn btn-info">Salir</a>
+        <a routerLink='' class="btn btn-info ml-5">Salir</a>
     </section>
 
     <!-- <app-search-user></app-search-user> No se requiere en este componente, pero es un ejemplo para el componente de búsqueda unitaria de pacientes-->
-
+    <div class="contenedorTabla">
     <table class="table">
         <thead>
-            <tr>
+            <tr class="subTitle">
                 <th>NOMBRE</th>
                 <th>APELLIDO</th>
                 <th>DOCUMENTO</th>
@@ -33,9 +33,10 @@
                 <td> {{ user.licenciaSo}} </td>
                 <td> {{ user.celular}} </td>
                 <td> {{ user.email}} </td>
-                <td><a routerLink='/editUser/{{ user._id}}' class="btn btn-success">Editar</a></td>
+                <td><a routerLink='/editUser/{{ user.documento}}' class="btn btn-success">Editar</a></td>
                 <td><a routerLink='/deleteUser/{{ user._id}}' class="btn btn-danger">Eliminar</a></td>
             </tr>
         </tbody>
     </table>
+    </div>
 </div>    

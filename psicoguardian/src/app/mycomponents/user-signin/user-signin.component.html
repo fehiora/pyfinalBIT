@@ -1,9 +1,9 @@
-<div class="container">
+<div class="container ">
 
-    <div class="formRegistro">
+    <div class="formRegistro ml-5">
 
     <form #userSigninForm = "ngForm" (ngSubmit) = "userSignin(userSigninForm);" >
-        <div class="row">
+        <div class="row m-1">
             <div class="col">
                 <input type="text" required name="nombre" id="nombre" #nombre="ngModel" [(ngModel)]="user.nombre" class="form-control" placeholder="Nombre"/>
             </div>
@@ -12,7 +12,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row m-1">
             <div class="col">
                 <input type="number" required name="documento" id="documento" #documento="ngModel" [(ngModel)]="user.documento"class="form-control" placeholder="Documento"/>
             </div>
@@ -21,7 +21,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row m-1">
             <div class="col">
                 <input type="text" required name="licenciaSo" id="licenciaSo" #licenciaSo="ngModel" [(ngModel)]="user.licenciaSo" class="form-control" placeholder="Licencia en Salud Ocupacional"/>
             </div>
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row m-1">
             <div class="col">
                 <input type="email" required name="email" id="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" placeholder="E-mail"/>
             </div>
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <button class="btn btn-primary btnReg" type="submit">REGISTRARSE</button>
+        <button class="btn btn-info mt-3 boton" type="submit">REGISTRARSE</button>
 
     </form>
 
