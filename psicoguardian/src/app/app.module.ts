@@ -19,6 +19,8 @@ import { SearchUserComponent } from './mycomponents/search-user/search-user.comp
 import { LoginAdminComponentComponent } from './mycomponents/login-admin/login-admin.component';
 import { MenuTrabajoComponent } from './mycomponents/menu-trabajo/menu-trabajo.component';
 import { AreaTrabajoComponent } from './mycomponents/area-trabajo/area-trabajo.component';
+import { TallerComponentComponent } from './taller-component/taller-component.component';
+import { EvaluacionComponent } from './evaluacion/evaluacion.component';
 // import { EmployeesComponent } from './mycomponents/employees/employees.component';
 
 const appRoutes: Routes = [
@@ -30,7 +32,9 @@ const appRoutes: Routes = [
   {path: 'deleteUser/:id', component: UserShowComponent},
   {path: 'searchUser', component: SearchUserComponent},
   {path: 'menuTrabajo', component: MenuTrabajoComponent},  //Solo la para accesos identificados
-  {path: 'areaTrabajo', component: AreaTrabajoComponent}  //Solo la para accesos identificados
+  {path: 'areaTrabajo', component: AreaTrabajoComponent},  //Solo la para accesos identificados
+  {path: 'areaTaller', component: TallerComponentComponent},  
+  {path: 'areaEvaluacion', component: EvaluacionComponent},
 ]
 
 @NgModule({
@@ -49,6 +53,8 @@ const appRoutes: Routes = [
     LoginAdminComponentComponent,
     MenuTrabajoComponent,
     AreaTrabajoComponent,
+    TallerComponentComponent,
+    EvaluacionComponent,
     // EmployeesComponent
   ],
   imports: [ /**Módulos de ángular que se importan para que funcionen */
